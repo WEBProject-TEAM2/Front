@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    /* 기본 여백 제거 */
+    padding: 0;
+    /* 기본 패딩 제거 */
+    font-family: Arial, sans-serif;
+    /* 기본 폰트 설정 */
+}
+
+header {
+    display: flex;
+    /* 플렉스박스 레이아웃 */
+    flex-direction: column;
+    /* 수직 정렬 */
+    align-items: center;
+    /* 중앙 정렬 */
+    padding: 100px 200px;
+    /* 상하 100px, 좌우 200px 패딩 */
+    position: relative;
+    /* 절대 위치 요소를 위한 상대 위치 */
+    background-image: url('./Web/다운로드\ \(3\).jpg');
+    background-size: 100% 370px;
+    /* 가로는 전체 너비로, 세로는 원본 비율대로 크기 조절 */
+    background-position: top center;
+    /* 배경 이미지를 가운데 정렬 */
+    background-repeat: no-repeat;
+    /* 배경 이미지 반복 없음 */
+}
+
+h1 {
+    margin: 0;
+    /* 기본 여백 제거 */
+    margin-bottom: 10px;
+    /* 제목 아래 여백 */
+}
+
+.right {
+    position: absolute;
+    /* 절대 위치 설정 */
+    top: 20px;
+    /* 위쪽 여백 */
+    right: 150px;
+    /* 오른쪽 여백 */
+    display: flex;
+    /* 가로 정렬 */
+    gap: 5px;
+    /* 버튼 사이 간격 */
+}
+
+.btn-navi {
+    padding: 10px 20px;
+    /* 버튼 패딩 */
+    border-radius: 5px;
+    /* 버튼 테두리 반경 */
+    color: black;
+    /* 글자 색상 */
+    text-decoration: none;
+    /* 텍스트 장식 제거 */
+    background: none;
+    /* 배경 없음 */
+    border: none;
+    /* 테두리 없음 */
+    cursor: pointer;
+    /* 커서 모양 변경 */
+    font-size: 16px;
+}
+
+.search-box {
+    display: flex;
+    /* 가로 정렬 */
+    align-items: center;
+    /* 중앙 정렬 */
+    height: 40px;
+    /* 검색창 높이 */
+    width: 300px;
+    /* 검색창 너비 */
+    background: white;
+    /* 검색창 배경색 */
+    border-radius: 40px;
+    /* 검색창 테두리 반경 */
+    padding: 0 120px;
+    /* 좌우 패딩 */
+    border: 1px solid black;
+    /* 검색창 테두리 */
+    margin-top: 30px;
+    /* 위쪽 여백 */
+}
+
+.search-text {
+    border: none;
+    /* 입력창 테두리 없음 */
+    background: none;
+    /* 입력창 배경 없음 */
+    outline: none;
+    /* 포커스 시 테두리 없음 */
+    color: black;
+    /* 글자 색상 */
+    font-size: 16px;
+    /* 글자 크기 */
+    line-height: 30px;
+    /* 줄 높이 */
+    flex: 1;
+    /* 남은 공간 차지 */
+    margin-left: 50px;
+
+}
+
+.search-button {
+    color: black;
+    /* 버튼 글자 색상 */
+    width: 40px;
+    /* 버튼 너비 */
+    height: 100%;
+    /* 버튼 높이 */
+    border-radius: 50%;
+    /* 버튼 테두리 반경 */
+    background: white;
+    /* 버튼 배경색 */
+    border: none;
+    /* 버튼 테두리 없음 */
+    font-size: 16px;
+    /* 버튼 글자 크기 */
+    display: flex;
+    /* 가로 정렬 */
+    justify-content: center;
+    /* 중앙 정렬 */
+    align-items: center;
+    /* 중앙 정렬 */
+    cursor: pointer;
+    /* 커서 모양 변경 */
+    margin-left: 120px;
+}
+
+.icon {
+    margin: 40px;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 10px;
+    /* 여백 조정 */
+    max-width: 1200px;
+    /* 최대 너비 설정 */
+    margin: 0 auto;
+    /* 가운데 정렬 */
+}
+
+
+.result-card {
+    width: 30%;
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 10px;
+    transition: transform 0.3s;
+    text-align: center;
+    border: 1px solid black;
+    padding-right: 15px;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+}
+
+.result-card h2 {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #007bff;
+    text-align: center;
+}
+
+.result-card p {
+    color: #333;
+    font-size: 14px;
+}
+
+.result-card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.result-card button:hover {
+    background-color: #0056b3;
+}
