@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>회원가입 페이지</title>
+    <link rel="stylesheet" type="text/css" href="../CSS/Login.css">
+</head>
+<body>
+    <div class="container">
+        <h1>혼자왔니? 회원가입</h1>
+        <p>네이버, 카카오와 같은 계정이면 3초 만에 가입이 완료!</p>
+        <button class="btn naver" onclick="location.href='https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id={YOUR_NAVER_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URI}&state={YOUR_STATE}'">네이버로 시작하기</button>
+        <button class="btn kakao" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id={713035d88ccb3097c7494be1fc34d8c5}&redirect_uri={http://localhost/kakaoLogin}&response_type=code'">카카오로 시작하기</button>
+        <div class="separator">또는</div>
+        <p>이미 계정이 있으신가요?</p>
+        <div class="logo-container">
+            <div class="naver-logo">
+                <img src="../img/naver.png">
+            </div>
+            <div class="kakao-logo">
+                <img src="../img/카카오톡.png">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

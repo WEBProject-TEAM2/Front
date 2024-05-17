@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼자왔니?</title> <!-- 페이지 제목 -->
+    <link rel="stylesheet" href="../CSS/MAIN.css"> <!-- CSS 파일 링크 -->
+
+    <script src="https://kit.fontawesome.com/b2560cc337.js" crossorigin="anonymous"></script>
+    <!-- FontAwesome 아이콘 스크립트 -->
+</head>
+
+<body>
+    <header>
+        <h1>혼자왔니?</h1> <!-- 페이지 제목 -->
+        <form class="search-box" action="" method="get"> <!-- 검색 폼 -->
+            <input class="search-text" type="text" placeholder="검색어를 입력해 주세요."> <!-- 검색 입력창 -->
+            <button class="search-button" type="submit"> <!-- 검색 버튼 -->
+                <i class="fa-solid fa-magnifying-glass" style="margin-left: auto;"></i> <!-- 돋보기 아이콘 -->
+            </button>
+        </form>
+        <div class="right"> <!-- 로그인 및 회원가입 버튼 컨테이너 -->
+            <!-- <button type="button" class="btn-navi login">로그인</button> 로그인 버튼 -->
+            <a href="login.html"><button type="button" class="btn-navi login">로그인 / 회원가입</button> <!-- 로그인 버튼 --></a>
+            <!-- <button type="button" class="btn-navi join">회원가입</button> 회원가입 버튼 -->
+        </div>
+
+        <div style="display: flex; flex-direction: row; margin: 0 100px;">
+            <div style="flex: 1; padding: 5px; width: 20%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <a href="Area.html">
+                        <img src="../img/지역.png" class="icon" width="50"
+                            style="vertical-align: middle; margin-bottom: 10px;">
+                    </a>
+                    <p style="margin-top: 0;">지역</p>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 5px; width: 20%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <a href="#" onclick="alert('관광지 버튼 클릭됨!')">
+                        <img src="../img/관광지.png" class="icon" width="50"
+                            style="vertical-align: middle; margin-bottom: 10px;">
+                    </a>
+                    <p style="margin-top: 0;">관광지</p>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 5px; width: 20%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <a href="#" onclick="alert('숙소 버튼 클릭됨!')">
+                        <img src="../img/숙소.png" class="icon" width="50"
+                            style="vertical-align: middle; margin-bottom: 10px;">
+                    </a>
+                    <p style="margin-top: 0;">숙소</p>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 5px; width: 20%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <a href="#" onclick="alert('음식 버튼 클릭됨!')">
+                        <img src="../img/음식.png" class="icon" width="50"
+                            style="vertical-align: middle; margin-bottom: 10px;">
+                    </a>
+                    <p style="margin-top: 0;">음식</p>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 5px; width: 20%;">
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                    <a href="#" onclick="alert('교통 버튼 클릭됨!')">
+                        <img src="../img/교통.png" class="icon" width="50"
+                            style="vertical-align: middle; margin-bottom: 10px;">
+                    </a>
+                    <p style="margin-top: 0;">교통</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="results">
+            <!-- 인기 숙소 -->
+            <div class="result-card">
+                <img src="../img/롯데호텔 부산.jpg" width="300" height="200">
+                <h2>롯데호텔 부산</h2>
+                <p>숙소 설명</p>
+                <button>자세히 보기</button>
+            </div>
+            <!-- 인기 숙소 -->
+            <div class="result-card">
+                <img src="../img/그랜드 조선 부산.jpg" width="300" height="200">
+                <h2>그랜드 조선 부산</h2>
+                <p>숙소 설명</p>
+                <button>자세히 보기</button>
+            </div>
+            <!-- 인기 숙소 -->
+            <div class="result-card">
+                <img src="../img/해운대 썬클라우드 호텔.jpg" width="300" height="200">
+                <h2>해운대 썬클라우드 호텔</h2>
+                <p>숙소 설명</p>
+                <button>자세히 보기</button>
+            </div>
+        </div>
+        <div class="results">
+            <!-- 인기 관광지 -->
+            <div class="result-card">
+                <img src="../img/남산타워.jpg" width="300" height="200">
+                <h2>남산 타워</h2>
+                <p>관광지 설명</p>
+                <button>자세히 보기</button>
+            </div>
+            <!-- 인기 관광지 -->
+            <div class="result-card">
+                <img src="../img/전주 한옥마을.jpg" width="300" height="200">
+                <h2>전주 한옥마을</h2>
+                <p>관광지 설명</p>
+                <button>자세히 보기</button>
+            </div>
+            <!-- 인기 관광지 -->
+            <div class="result-card">
+                <img src="../img/롯데타워.png" width="300" height="200">
+                <h2>롯데 타워</h2>
+                <p>관광지 설명</p>
+                <button>자세히 보기</button>
+            </div>
+        </div>
+        <div class="results">
+            <!-- 인기 음식 -->
+            <div class="result-card">
+                <img src="../img/밀면.jpg" width="300" height="200">
+                <h2>밀면</h2>
+                <p>음식 설명</p>
+                <button>자세히 보기</button>
+            </div>
+            <!-- 인기 음식 -->
+            <div class="result-card">
+                <img src="../img/돼지국밥.jpg" width="300" height="200">
+                <h2>돼지 국밥</h2>
+                <p>음식 설명</p>
+                <button>자세히 보기</button>
+            </div>
+            <!-- 인기 음식 -->
+            <div class="result-card">
+                <img src="../img/광어회.jpg" width="300" height="200">
+                <h2>광어회</h2>
+                <p>음식 설명</p>
+                <button>자세히 보기</button>
+            </div>
+        </div>
+    </header>
+</body>
+
+</html>
