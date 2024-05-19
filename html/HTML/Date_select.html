@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼자왔니?</title>
+    <link rel="stylesheet" href="Date_select.css">
+</head>
+<body>
+    <header>
+        <div class="top_block">
+            <div class="header_block">
+                <h1 class="logo">혼자왔니</h1>
+                <a href="Mypage.html"><button class="mypage">마이페이지</button></a>
+            </div>
+            <div class="nav_bar">
+                <button class="home"><a href="Main.html">Home</a></button>
+                <button class="places"><a href="Places.html">지역</a></button>
+                <button class="hotel"><a href="Hotels.html">숙소</a></button>
+                <button class="diner"><a href="Diner.html">음식점</a></button>
+                <button class="trip_spot"><a href="trip_spot">관광지</a></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="main_content">
+            <div class="calendar_select">
+                <h2 class="info">날짜와 시간을 선택해주세요</h2>
+                <input type="date">
+                <div class='rap'>
+                    <div class="header">
+                        <div class="btn prevDay"></div>
+                        <h2 class='dateTitle'></h2>
+                        <div class="btn nextDay"></div>
+                    </div>
+                    <div class="grid dateHead">
+                        <div class="days">일</div>
+                        <div class="days">월</div>
+                        <div class="days">화</div>
+                        <div class="days">수</div>
+                        <div class="days">목</div>
+                        <div class="days">금</div>
+                        <div class="days">토</div>
+                    </div>
+                    <div class="grid dateBoard"></div>
+                </div>
+            </div>
+            <div class="right_side">
+                <div class="time_select">
+                    <form action="#" class="duration_select">
+                        <select name="오전/오후" id="duration">
+                            <option value="am">오전</option>
+                            <option value="pm">오후</option>
+                        </select>
+                    </form>
+                    <form action="#" class="hour_select">
+                        <select name="시간" id="hour">
+                            <option value="one_h">1시</option>
+                            <option value="two_h">2시</option>
+                            <option value="three_h">3시</option>
+                            <option value="four_h">4시</option>
+                            <option value="five_h">5시</option>
+                            <option value="six_h">6시</option>
+                            <option value="seven_h">7시</option>
+                            <option value="eight_h">8시</option>
+                            <option value="nine_h">9시</option>
+                            <option value="ten_h">10시</option>
+                            <option value="eleven_h">11시</option>
+                            <option value="twelve_h">12시</option>
+                        </select>
+                    </form>
+                    <form action="#" class="minute_select">
+                        <select name="분" id="minute">
+                            <option value="zero_m">0분</option>
+                            <option value="five_m">5분</option>
+                            <option value="ten_m">10분</option>
+                            <option value="fifteen_m">15분</option>
+                            <option value="twenty_m">20분</option>
+                            <option value="twentyfive_m">25분</option>
+                            <option value="thirty_m">30분</option>
+                            <option value="thirtyfive_m">35분</option>
+                            <option value="forty_m">40분</option>
+                            <option value="fortyfive_m">45분</option>
+                            <option value="fifty_m">50분</option>
+                            <option value="fiftyfive_m">55분</option>
+                        </select>
+                    </form>
+                </div>
+                <div class="accept">
+                    <a href=""><button class="keep_on_list" onclick="keep_complete()">담기</button></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="Date_select.js"></script>
+</body>
+</html>
