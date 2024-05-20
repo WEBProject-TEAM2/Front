@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>혼자왔니</title>
+    <link rel="stylesheet" href="restaurant_styles.css">
+    <!-- 카카오맵 API 스크립트 -->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	0031d14ff102734d71073c804c97b492"></script>
+</head>
+<body>
+    <div class="header">
+        <div>혼자왔니</div>
+        <div>로그인/회원가입</div>
+    </div>
+    <ul class="menu">
+        <li class="menu-item">HOME</li>
+        <li class="menu-item">
+            <div class="dropdown-label" onclick="toggleDropdown()">지역</div>
+            <div id="dropdown-content" class="dropdown-content">
+                <div class="menu-item" onclick="moveToLocation('경기')">경기</div>
+                <div class="menu-item" onclick="moveToLocation('제주도')">제주도</div>
+                <div class="menu-item" onclick="moveToLocation('충청남도')">충청남도</div>
+                <div class="menu-item" onclick="moveToLocation('전라북도')">전라북도</div>
+                <div class="menu-item" onclick="moveToLocation('세종')">세종</div>
+                <div class="menu-item" onclick="moveToLocation('광주')">광주</div>
+                <div class="menu-item" onclick="moveToLocation('서울')">서울</div>
+                <div class="menu-item" onclick="moveToLocation('경상남도')">경상남도</div>
+                <div class="menu-item" onclick="moveToLocation('충청북도')">충청북도</div>
+                <div class="menu-item" onclick="moveToLocation('인천')">인천</div>
+                <div class="menu-item" onclick="moveToLocation('울산')">울산</div>
+                <div class="menu-item"></div> <!-- 빈 칸 -->
+                <div class="menu-item" onclick="moveToLocation('강원')">강원</div>
+                <div class="menu-item" onclick="moveToLocation('경상북도')">경상북도</div>
+                <div class="menu-item" onclick="moveToLocation('전라남도')">전라남도</div>
+                <div class="menu-item" onclick="moveToLocation('대구')">대구</div>
+                <div class="menu-item" onclick="moveToLocation('대전')">대전</div>
+                <div class="menu-item"></div> <!-- 빈 칸 -->
+            </div>
+        </li>
+        <li class="menu-item">숙소보기</li>
+        <li class="menu-item">음식점보기</li>
+        <li class="menu-item">관광지 보기</li>
+    </ul>
+    <div class="radius-dropdown">
+        <select id="radius-select" onchange="setRadius()">
+            <option value="none">반경을 선택하세요</option>
+            <option value="300">300m</option>
+            <option value="500">500m</option>
+            <option value="1000">1km</option>
+        </select>
+    </div>
+    <span id="selected-location" class="selected-location">현재 선택된 지역 : 서울</span>
+    <div class="main-content">
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        <div class="restaurant-info-container" id="restaurant-info-container">
+            <!-- 음식점 정보가 여기에 추가됩니다 -->
+        </div>
+    </div>
+    <script src="restaurant_scripts.js"></script>
+</body>
+</html>
