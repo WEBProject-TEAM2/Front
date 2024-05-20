@@ -1,0 +1,104 @@
+header {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wishlist {
+    position: absolute;
+    top: 160px; /* 위치를 조정하세요 */
+    left: 15px; /* 위치를 조정하세요 */
+    font-size: 30px; /* 글자 크기를 조정하세요 */
+    font-weight: bold;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    color: black;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.button {
+    background-color: rgb(137, 248, 248);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 30px; /* 버튼을 오른쪽에서 약간 왼쪽으로 이동 */
+    top: -19px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 50px;
+    display: flex;
+}
+
+li {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.nav-button {
+    border: none;
+    color: black;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 480px; /* 전체 너비를 조정하세요 */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 16.66%; /* 6열로 정렬 */
+    box-sizing: border-box;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.address-display {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    display: none; /* 처음에는 보이지 않도록 설정 */
+}
+
+.map-container {
+    width: 40%;
+    height: 600px;
+    margin-left: 280px;
+    margin-top:
