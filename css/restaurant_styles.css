@@ -1,0 +1,176 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f1f1f1;
+  padding: 10px;
+  list-style: none;
+  margin: 0;
+  width: 100%;
+}
+.menu-item {
+  padding: 10px;
+  cursor: pointer;
+  position: relative; /* 드롭다운을 위한 상대 위치 설정 */
+}
+.dropdown-content {
+  display: none; /* 기본적으로 숨김 */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 100%; /* 전체 너비 */
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 100%; /* 메뉴 바로 아래로 위치 */
+  left: 0;
+  box-sizing: border-box;
+  padding: 10px;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 10px;
+}
+.dropdown-content .menu-item {
+  border: 1px solid #ccc;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  white-space: nowrap; /* 텍스트가 한 줄로 표시되도록 설정 */
+}
+.show {
+  display: grid; /* 활성화 시 그리드로 보이도록 설정 */
+}
+.main-content {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  gap: 10px; /* 지도와 음식점 정보 박스 사이의 여백을 10px로 설정 */
+}
+.map-container {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 960px; /* 가로 크기 */
+  height: 540px; /* 세로 크기 */
+}
+#map {
+  width: 100%; /* 지도 너비 */
+  height: 100%; /* 박스 높이에 맞춤 */
+}
+.radius-dropdown {
+  margin: 20px; /* 여백 */
+  position: relative;
+  display: inline-block;
+  left: 20px; /* 오른쪽으로 이동 */
+}
+.radius-dropdown select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  appearance: none; /* 기본 화살표 제거 */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="black" d="M0 0L2 2L4 0z"/></svg>') no-repeat right 10px center;
+  background-color: #fff;
+  background-size: 10px;
+  width: 150px; /* 드롭다운 너비 설정 */
+}
+.radius-dropdown select::-ms-expand {
+  display: none; /* 기본 화살표 제거 (IE) */
+}
+.dropdown-label {
+  display: flex;
+  align-items: center;
+}
+.dropdown-label::after {
+  content: '▼';
+  margin-left: 5px;
+  font-size: 10px;
+}
+.selected-location {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 14px;
+  color: gray;
+}
+/* 음식점 정보 컨테이너 */
+.restaurant-info-container {
+  display: flex;
+  flex-direction: column; /* 음식점 정보 박스를 세로로 배치 */
+  gap: 10px; /* 박스 사이에 10px의 간격을 둠 */
+  width: 350px; /* 전체 컨테이너의 가로 크기를 350px로 설정 */
+}
+/* 개별 음식점 정보 박스 */
+.restaurant-info {
+  display: flex;
+  padding: 10px; /* 박스 내부에 10px의 여백을 둠 */
+  border: 1px solid #ccc; /* 박스에 1px 두께의 회색 테두리를 둠 */
+  border-radius: 10px; /* 박스의 모서리를 10px만큼 둥글게 함 */
+  background-color: #f9f9f9; /* 배경색 설정 */
+  align-items: center; /* 세로 정렬 */
+}
+.restaurant-info img {
+  width: 80px; /* 이미지의 가로 크기를 80px로 설정 */
+  height: 80px; /* 이미지의 세로 크기를 80px로 설정 */
+  border-radius: 10px; /* 이미지의 모서리를 10px만큼 둥글게 함 */
+  margin-right: 10px; /* 이미지와 텍스트 사이에 간격을 둠 */
+}
+.restaurant-info-content {
+  display: flex;
+  flex-direction: column; /* 텍스트 내용을 세로로 배치 */
+  gap: 5px; /* 텍스트 요소 사이에 5px의 간격을 둠 */
+  flex: 1; /* 남은 공간을 차지하게 함 */
+}
+.restaurant-info-content h3 {
+  margin: 0;
+  font-size: 18px;
+}
+.restaurant-info-content p {
+  margin: 0;
+  font-size: 14px;
+  color: #555;
+}
+.restaurant-info-content .rating {
+  display: flex;
+  align-items: center;
+}
+.restaurant-info-content .rating span {
+  margin-left: 5px;
+  color: #f39c12; /* 별점 색상 */
+  font-weight: bold;
+}
+.restaurant-info-actions {
+  display: flex;
+  gap: 10px; /* 버튼 사이에 10px의 간격을 둠 */
+}
+.restaurant-info-actions button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+}
+.restaurant-info-actions button.info {
+  background-color: #3498db;
+  color: white;
+}
+.restaurant-info-actions button.list {
+  background-color: #2ecc71;
+  color: white;
+}
+.restaurant-info-actions button.favorite {
+  background-color: #e74c3c;
+  color: white;
+}
