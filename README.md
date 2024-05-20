@@ -1,6 +1,7 @@
 # 혼자왔니 Front
 
 sever.js : node.js설치하고 저장한 경로로 가서 cmd에 
+
 npm init -y
 
 npm install express node-fetch
