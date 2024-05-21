@@ -9,7 +9,7 @@
         <h1>혼자왔니? 회원가입</h1>
         <p>네이버, 카카오와 같은 계정이면 3초 만에 가입이 완료!</p>
         <button class="btn naver" onclick="location.href='https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id={YOUR_NAVER_CLIENT_ID}&redirect_uri={YOUR_REDIRECT_URI}&state={YOUR_STATE}'">네이버로 시작하기</button>
-        <button class="btn kakao" onclick="location.href='https://kauth.kakao.com/oauth/authorize?client_id={713035d88ccb3097c7494be1fc34d8c5}&redirect_uri={http://localhost/kakaoLogin}&response_type=code'">카카오로 시작하기</button>
+        <a href="javascript:kakaoLogin()"><img src="https://www.gb.go.kr/Main/Images/ko/member/certi_kakao_login.png" alt="" style="height: 80px; width: 460px;"></a>
         <div class="separator">또는</div>
         <p>이미 계정이 있으신가요?</p>
         <div class="logo-container">
@@ -21,5 +21,25 @@
             </div>
         </div>
     </div>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script>
+        window.Kakao.init("fd364ac837b69f231b69901d669c45a4");
+
+        function kakaoLogin(){
+            window.Kakao.Auth.login({
+                scope:'profile_nickname, profile_image',
+                success: function(authObj){
+                    console.log(authObj)
+                    window.Kakao.API.request({
+                        URL:'/v2/user/me',
+                        success: res => {
+                            const kakao_account = res.kakao_account
+                            console.log(kakao_account)
+                        }
+                    })
+                }
+            })
+        }
+    </script>
 </body>
 </html>
