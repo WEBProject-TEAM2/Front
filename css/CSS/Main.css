@@ -14,11 +14,11 @@ header {
     /* 수직 정렬 */
     align-items: center;
     /* 중앙 정렬 */
-    padding: 100px 200px;
-    /* 상하 100px, 좌우 200px 패딩 */
+    padding: 50px 200px;
+    /* 상하 50px, 좌우 200px 패딩 */
     position: relative;
     /* 절대 위치 요소를 위한 상대 위치 */
-    background-image: url('./Web/다운로드\ \(3\).jpg');
+    background-image: url('../img/비행기.jpg');
     background-size: 100% 370px;
     /* 가로는 전체 너비로, 세로는 원본 비율대로 크기 조절 */
     background-position: top center;
@@ -82,7 +82,7 @@ h1 {
     /* 좌우 패딩 */
     border: 1px solid black;
     /* 검색창 테두리 */
-    margin-top: 30px;
+    margin-top: 10px;
     /* 위쪽 여백 */
 }
 
@@ -102,7 +102,6 @@ h1 {
     flex: 1;
     /* 남은 공간 차지 */
     margin-left: 50px;
-
 }
 
 .search-button {
@@ -135,30 +134,34 @@ h1 {
     margin: 40px;
 }
 
-.results {
+.results1 {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 20px 10px;
-    /* 여백 조정 */
-    max-width: 1200px;
-    /* 최대 너비 설정 */
     margin: 0 auto;
     /* 가운데 정렬 */
+    margin-top: 300px;
 }
 
+.results2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    /* 가운데 정렬 */
+    margin-top: 100px;
+}
 
 .result-card {
-    width: 30%;
+    width: calc(20% - 20px);
+    /* 카드 폭을 유연하게 설정 */
     background-color: #fff;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
     border-radius: 5px;
-    margin-bottom: 20px;
     padding: 10px;
     transition: transform 0.3s;
     text-align: center;
     border: 1px solid black;
-    padding-right: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .result-card:hover {
@@ -167,14 +170,9 @@ h1 {
 
 .result-card h2 {
     margin-top: 10px;
-    font-size: 18px;
+    font-size: 15px;
     color: #007bff;
     text-align: center;
-}
-
-.result-card p {
-    color: #333;
-    font-size: 14px;
 }
 
 .result-card button {
@@ -185,12 +183,63 @@ h1 {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 10px;
     transition: background-color 0.3s;
     display: block;
-    margin: 0 auto;
+    margin:
+        0 auto;
 }
 
 .result-card button:hover {
     background-color: #0056b3;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+
+.dropdown-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    /* 드롭다운 버튼과 로그인 버튼 사이 여백 조정 */
+}
+
+.dropdown-btn {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 35px;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none;
 }
