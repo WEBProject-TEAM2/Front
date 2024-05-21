@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혼자왔니</title>
-    <link rel="stylesheet" href="restaurant_styles.css">
-    <!-- 카카오맵 API 스크립트 -->
-    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=	0031d14ff102734d71073c804c97b492"></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
     <div class="header">
         <div>혼자왔니</div>
@@ -49,16 +49,25 @@
             <option value="500">500m</option>
             <option value="1000">1km</option>
         </select>
+        <button onclick="moveToUserLocation()" class="moveToUserLocation">내 위치로 이동</button>
+        <input type="text" id="search-input" placeholder="지역을 입력하세요" onkeypress="if(event.keyCode==13) searchLocation()">
+        <span id="selected-location" class="selected-location">현재 선택된 지역 : 없음</span>
     </div>
-    <span id="selected-location" class="selected-location">현재 선택된 지역 : 서울</span>
     <div class="main-content">
         <div class="map-container">
             <div id="map"></div>
         </div>
-        <div class="restaurant-info-container" id="restaurant-info-container">
-            <!-- 음식점 정보가 여기에 추가됩니다 -->
+        <div class="restaurant-container">
+            <div class="sort-dropdown">
+                <select id="sort-select" onchange="sortRestaurants()">
+                    <option value="rating">별점 많은 순</option>
+                    <option value="reviews">리뷰 많은 순</option>
+                </select>
+            </div>
+            <div id="restaurant-info-box" class="restaurant-info-box"></div>
         </div>
     </div>
-    <script src="restaurant_scripts.js"></script>
+    <div id="street-view" class="street-view"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMjgnlfqEzvyTg9aNolRYkMciI3BxvfRo&libraries=places&callback=initMap" async defer></script>
+    <script src="scripts.js"></script>
 </body>
-</html>
