@@ -1,4 +1,5 @@
-※경로, 파일명 설정※
+# ※경로, 파일명 설정※
+
 ⊙ Front>css
   - Main.css [메인페이지]
   - AreaDropdown.css [지역 페이지]
