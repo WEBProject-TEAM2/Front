@@ -13,7 +13,7 @@
   - Travel_List.css [여행리스트 페이지]
 
 ⊙ Front>html
-  -이름은 같고 확장자만 다름!!
+  - 이름은 같고 확장자만 다름!!
   
 ⊙ Front>img
 
