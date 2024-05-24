@@ -1,0 +1,34 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container * {
+    margin: 10px;
+    color: black;
+}
+
+.container h1 {
+    font-size: 3em;
+}
+.weatherInfo {
+    font-size: 1.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.weatherInfo, .weatherIcon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 120px; /* 원하는 여백 값으로 조절하세요 */
+}
