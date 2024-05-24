@@ -1,0 +1,241 @@
+body {
+    margin: 0;
+    padding: 0 50px;
+    font-family: Arial, sans-serif;
+    background-color: rgba(83, 179, 235, 0.1);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 200px;
+    position: relative;
+    background-size: 100% 370px;
+    background-position: top center;
+    background-repeat: no-repeat;
+    height: 200px;
+}
+
+/*header ~ body 사이 영역 */
+/*.separator {
+    height: 300px;
+    원하는 높이로 조정하세요 
+    margin-top: 50px;
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../Web/img/비행기.jpg');
+}*/
+
+
+h1 {
+    margin: 0;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.right {
+    position: absolute;
+    top: 20px;
+    right: 150px;
+    display: flex;
+    gap: 5px;
+}
+
+.btn-navi {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    width: 300px;
+    background: white;
+    border-radius: 40px;
+    padding: 0 120px;
+    border: 1px solid black;
+    margin-top: 30px;
+}
+
+.search-text {
+    border: none;
+    background: none;
+    outline: none;
+    color: black;
+    font-size: 16px;
+    line-height: 30px;
+    flex: 1;
+    margin-left: 50px;
+}
+
+.search-button {
+    color: black;
+    width: 40px;
+    height: 100%;
+    border-radius: 50%;
+    background: white;
+    border: none;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-left: 120px;
+}
+
+.icon {
+    margin: 40px;
+}
+
+
+.results1 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0 200px;
+}
+
+.results2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 0 200px;
+    margin-bottom: 50px;
+}
+
+.result-card {
+    width: calc(30% - 20px);
+    /* 카드의 너비를 30%로 설정 */
+    height: 300px;
+    /* 카드의 높이를 300px로 설정 */
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 12px;
+    text-align: center;
+    border: 1px solid black;
+    margin-left: 10px;
+    margin-right: 10px;
+    position: relative;
+}
+
+
+.result-card h2 {
+    margin-top: 10px;
+    font-size: 15px;
+    color: #007bff;
+    text-align: center;
+}
+
+.result-card:hover {
+    transform: translateY(-5px);
+}
+
+.result-card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: block;
+    margin: 0 auto;
+}
+
+.result-card button:hover {
+    background-color: #0056b3;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: black;
+    text-decoration: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+    position: relative;
+}
+
+.dropdown-content {
+    top: 35px;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    display: none;
+}
+
+.toptrave1,
+.toptrave2 {
+    font-size: 25px;
+    text-align: left;
+    margin-left: 200px;
+    margin-top: 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 20px;
+    display: inline-block;
+    width: 500px;
+    box-sizing: border-box;
+}
+
+.text-with-underline {
+    text-decoration: underline;
+}
+
+.result-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px 10px;
+    /* 여백 조정 */
+    max-width: 1200px;
+    /* 최대 너비 설정 */
+    margin: 0 auto;
+    /* 가운데 정렬 */
+}
