@@ -11,6 +11,7 @@
   - Like.css [찜 페이지]
   - RecentView.css [최근 본 페이지]
   - Travel_List.css [여행리스트 페이지]
+  - Weather.css [날씨 API 페이지]
 
 ⊙ Front>html
   - 이름은 같고 확장자만 다름!!
