@@ -11,6 +11,10 @@
   - RecentView.css [최근 본 페이지]
   - Travel_List.css [여행리스트 페이지]
   - Weather.css [날씨 API 페이지]
+  - Restaurant_Weather.css [음식점 정보 페이지 + 날씨]
+  - Hotel.css [숙소 페이지 + 날씨]
+  - tourist_att.css [관광지 + 날씨]
+  - js 파일에서 details.appendchild(콜) -> (phone)으로 변경해서 실행하면 됩니다.
 
 ⊙ Front>html
   - 이름은 같고 확장자만 다름!!
