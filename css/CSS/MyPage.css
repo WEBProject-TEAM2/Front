@@ -1,0 +1,116 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    text-align: left;
+    padding: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: flex-start; /* 왼쪽 정렬 */
+    background-color: #444;
+    padding: 0.8rem;
+    margin-top: 10px;
+}
+
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+.mypage {
+    font-size: 25px;
+    text-align: center;
+    margin-top: 80px; /* 네비게이션과의 간격 조절 */
+    font-weight: bold; /* 텍스트 굵게 */
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.gallery {
+    display: flex;
+    flex-wrap: wrap; /* 줄바꿈을 하지 않도록 설정 */
+    justify-content: center;
+    align-items: center;
+    gap: 20px; /* 사진 사이의 간격 조절 */
+}
+
+.item {
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 8px; /* 컨테이너 네모 -> 동그라미 */
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 400px; /* 박스의 너비 설정 */
+    height: 280px; /* 박스의 높이 설정 */
+    margin-top: px; /* 박스의 상단 여백 설정 */
+    box-sizing: border-box; /* padding과 border를 포함하여 크기 계산 */
+}
+
+.img-container {
+    width: 100%;
+    height: 150px; /* 이미지 컨테이너의 높이 설정 */
+    position: relative;
+    overflow: hidden;
+} 
+
+.img-container img {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 이미지를 가운데 정렬 */
+    max-width: 80% !important; /* 이미지의 최대 너비 설정 */
+    max-height: 80% !important; /* 이미지의 최대 높이 설정 */
+}
+
+.item h2 {
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.item input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    margin-top: 30px;
+    border: none;
+    border-radius: 4px;
+    background-color: transparent;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: underline; /* 밑줄 추가 */
+    color: #444; /* 텍스트 색상 */
+}
+/*창 줄이면 창 크기에 맞게 박스 위치 2줄됨, 여기 지우면 갤러리 크기만 줄어드는 반응형!*/
+@media (max-width: 1200px) { 
+    .item {
+        flex: 1 1 calc(50% - 40px); /* 3개의 컬럼으로 줄이기 */
+    }
+}
+
+@media (max-width: 900px) {
+    .item {
+        flex: 1 1 calc(50% - 40px); /* 2개의 컬럼으로 줄이기 */
+    }
+}
+
+@media (max-width: 600px) {
+    .item {
+        flex: 1 1 calc(100% - 40px); /* 1개의 컬럼으로 줄이기 */
+    }
+}
