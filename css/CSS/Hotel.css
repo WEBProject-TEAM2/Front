@@ -1,0 +1,312 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    display: flex;
+    user-select: none;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+}
+
+@font-face {
+    font-family: 'HSSanTokki20-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/HSSanTokki20-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.header h3 {
+    font-family: 'HSSanTokki20-Regular';
+    margin-right: auto;
+    margin-left: 40px;
+    font-size: 30px;
+}
+
+.button {
+    background-color: rgb(137, 248, 248);
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 25px;
+    top: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: whitesmoke;
+    font-size: 18px;
+    padding: 5px;
+    list-style: none;
+    margin: 0;
+    width: 100%;
+}
+
+.menu-item {
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    user-select: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    box-sizing: border-box;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px
+}
+
+.dropdown-content .menu-item {
+    padding: 20px;
+    text-align: center;
+    background : none;
+    border: none;
+    white-space: nowrap;
+}
+
+.show {
+    display: grid;
+}
+
+.main-content {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    position: relative;
+}
+
+.map-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 960px;
+    height: 540px;
+    margin-top: 50px;
+    position: relative;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+.radius-dropdown {
+    position: absolute;
+    top: 23px;
+    left: 10px;
+    z-index: 1;
+    padding: 10px;
+    margin-top: 115px;
+    border-radius: 5px;
+}
+
+.radius-dropdown select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="black" d="M0 0L2 2L4 0z"/></svg>') no-repeat right 10px center;
+    background-color: #fff;
+    background-size: 10px;
+    width: 150px;
+}
+
+.radius-dropdown select::-ms-expand {
+    display: none;
+}
+
+.moveToUserLocation {
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+#search-input {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+#selected-location {
+    margin-left: 10px;
+    /* 검색 입력창 오른쪽으로 20px 여백 */
+    font-size: 14px;
+    color: black;
+    user-select: none;
+}
+
+.dropdown-label {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-label::after {
+    content: '▼';
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.restaurant-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+.restaurant-info-box {
+    width: 900px;
+    height: 560px;
+    overflow-y: auto;
+    border-left: 1px solid #ccc;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sort-dropdown {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    margin-right: 10px;
+    z-index: 1;
+}
+
+.restaurant-info {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: ghostwhite;
+}
+
+.restaurant-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.restaurant-details {
+    flex: 1;
+}
+
+.restaurant-details h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.restaurant-details p {
+    margin: 4px 0;
+}
+
+.restaurant-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 80px;
+}
+
+.restaurant-actions button {
+    border: none;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px 22px;
+}
+
+.restaurant-actions img {
+    width: 16px;
+    height: 16px;
+}
+
+.restaurant-actions button:hover {
+    text-decoration: underline;
+}
+
+.star-rating {
+    color: #ffc107;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.star-rating::before {
+    content: '★';
+    margin-right: 5px;
+}
+
+.street-view {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    display: none;
+    /* 기본적으로 숨김 */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container * {
+    margin: 10px;
+    color: black;
+}
+
+.container h1 {
+    font-size: 3em;
+}
+
+.weatherInfo {
+    font-size: 1.2em;
+    /* 날씨 정보의 폰트 크기 */
+    position: absolute;
+    user-select: none;
+    top: -10px;
+    right: 190px;
+}
