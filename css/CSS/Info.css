@@ -1,0 +1,97 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+header {
+    text-align: left;
+    background-color: #fff;
+    padding: 1rem;
+}
+
+.top-nav {
+    display: flex;
+    justify-content:flex-start;
+    background-color: #fff;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    padding-left: 200px;
+}
+
+.top-nav a {
+    color: #444;
+    text-decoration: none;
+    margin: 0 1rem;
+}
+
+.menu {
+    width: 200px;
+    background-color: #fff;
+    border-right: 1px solid #ddd;
+    position: fixed;
+    top: 80px; /* header 높이만큼 내려주기 */
+    height: calc(100vh - 80px); /* 전체 화면 높이에서 header 높이를 뺀 값 */
+    padding: 20px 0;
+}
+
+.menu h1 {
+    font-size: 18px;
+    padding: 0 20px;
+    margin-bottom: 3rem;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    margin-bottom: 1rem;
+}
+
+.menu li a {
+    height: 30px;
+    display: block;
+    padding: 0 20px;
+    font-size: 14px; /* px 단위를 추가 */
+    color: #555;
+}
+
+.menu li a:hover {
+    background-color: yellowgreen;
+    color: white;
+}
+
+.profile {
+    margin-left: 220px; /* 사이드바 너비 + 여백만큼 메인 콘텐츠를 옮김 */
+    padding: 20px;
+}
+
+.profile img {
+    top: 200px; /* 위에서 50px 만큼 떨어진 위치 */
+    left: 250px; /* 왼쪽에서 100px 만큼 떨어진 위치 */
+    width: 200px; /* 너비 설정 */
+    height: 200px; /* 높이 자동으로 조정 */
+
+}
+
+.text-boxes {
+    margin-top: 30px;
+}
+
+.text-boxes input {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    margin-top: 20px; /* 이미지 아래 여백 조정 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
