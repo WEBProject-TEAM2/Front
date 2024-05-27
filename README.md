@@ -2,7 +2,6 @@
 
 ⊙ Front>css
   - Main.css [메인페이지]
-  - AreaDropdown.css [지역 페이지]
   - Restaurant.css [식당 페이지]
   - Date_Select.css [리스트 담기 누르면 뜨는 날짜 선택 페이지]
   - Login.css [로그인 페이지]
