@@ -1,7 +1,7 @@
 var map; // 지도 객체
 var circle; // 반경을 표시할 원 객체
 var markerList = []; // 지도에 표시된 마커 목록
-var restaurantList = []; // 검색된 음식점 목록
+var lodgingList = []; // 검색된 음식점 목록
 var infoWindow; // 정보창 객체
 var geocoder; // 지오코딩 객체
 var panorama; // 거리뷰 객체
@@ -351,11 +351,10 @@ function renderRestaurantInfo(restaurants) {
         const detailBtn = document.createElement("button");
         detailBtn.textContent = "상세정보";
         detailBtn.addEventListener("click", function() {
-            const name = encodeURIComponent(placeDetails.name); // 음식점 이름을 URL 형식에 맞게 인코딩합니다.
+            const name = encodeURIComponent(placeDetails.name);
             const mapUrl = `https://www.google.com/maps/search/?api=1&query=${name}`;
             window.open(mapUrl, "_blank");
         });
-        
         actions.appendChild(detailBtn);
             
         const listBtn = document.createElement("button");
@@ -382,6 +381,14 @@ function renderRestaurantInfo(restaurants) {
 
         infoBox.appendChild(restaurantInfo);
     });
+}
+
+function redirectToPage2() {
+    window.location.href = '../HTML/Restaurant_Weather.html';
+}
+
+function redirectToPage3() {
+    window.location.href = '../HTML/Tour_att.html';
 }
 
 // 페이지 로드 시 지도 초기화
