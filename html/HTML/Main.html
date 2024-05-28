@@ -1,85 +1,52 @@
+
 <!DOCTYPE html>
 <html lang="ko">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>혼자왔니?</title>
     <script src="https://kit.fontawesome.com/b2560cc337.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../CSS/MAIN.css">
-
+    <link rel="stylesheet" href="../css/Main.css">
 </head>
 
-<body>
+<div>
     <header>
-        <h1>혼자왔니?</h1>
-        
-        
+        <link href="https://fastly.jsdelivr.net/gh/projectnoonnu/2405-3@1.1/MangoDdobak-B.woff2" rel="stylesheet">
         <div class="right">
-            <a href="../HTML/login.html"><button type="button" class="btn-navi login">로그인 / 회원가입</button></a>
+            <a href="../html/Login.html"><button type="button" class="btn-navi login">로그인 / 회원가입</button></a>
             <div class="dropdown">
                 <button class="dropdown-btn" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="../HTML/AreaDropdown.html" onclick="closeDropdown()">지역</a>
-                    <a href="../HTML/tourist_attraction.html" onclick="closeDropdown()">관광지</a>
-                    <a href="../HTML/lodging.html" onclick="closeDropdown()">숙소</a>
-                    <a href="../HTML/map.html" onclick="closeDropdown()">음식점</a>
-                    <a href="#" onclick="closeDropdown()">마이페이지</a>
+                    <a href="../html/Hotel.html" onclick="closeDropdown()">숙소</a>
+                    <a href="../html/Restaurant_Weather.html" onclick="closeDropdown()">음식점</a>
+                    <a href="../html/Tour_att.html" onclick="closeDropdown()">관광지</a>
+                    <a href="../html/MyPage.html" onclick="closeDropdown()">마이페이지</a>
                 </div>
             </div>
         </div>
+        <h1>혼자왔니</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/Hotel.html">숙소</a></li>
+                <li><a href="../html/Restaurant_Weather.html">음식점</a></li>
+                <li><a href="../html/Tour_att.html">관광지</a></li>
+                <li><a href="../html/MyPage.html">마이페이지</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- 아이콘 버튼들을 가로로 정렬하기 위한 컨테이너 -->
-    <div style="display: flex; flex-direction: row; justify-content: center; margin: -30px 10px 10px 10px;">
-        <!-- 관광지 아이콘 버튼 -->
-        <div style="margin: 0 50px; width: 100px;">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <a href="../HTML/tourist_attraction.html" onclick="alert('관광지 버튼 클릭됨!')">
-                    <img src="../img/관광지.png" class="icon" width="50"
-                    style="vertical-align: middle; margin-bottom: 10px;">
-                </a>
-                <p style="margin-top: 0; font-weight: bold;">관광지</p>
-            </div>
-        </div>
-        <!-- 숙소 아이콘 버튼 -->
-        <div style="margin: 0 50px; width: 100px;">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <a href="../HTML/lodging.html" onclick="alert('숙소 버튼 클릭됨!')">
-                    <img src="../img/숙소.png" class="icon" width="50"
-                        style="vertical-align: middle; margin-bottom: 10px;">
-                    </a>
-                    <p style="margin-top: 0; font-weight: bold;">숙소</p>
-                </div>
-            </div>
-        <!-- 음식 아이콘 버튼 -->
-        <div style="margin: 0 50px; width: 100px;">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <a href="../HTML/map.html" onclick="alert('음식 버튼 클릭됨!')">
-                    <img src="../img/음식.png" class="icon" width="50"
-                    style="vertical-align: middle; margin-bottom: 10px;">
-                </a>
-                <p style="margin-top: 0; font-weight: bold;">음식</p>
-            </div>
-        </div>
+    <!-- 영역 나누기  -->
+    <section class="hero">
+        <h2>여행 계획, 어디서부터 짜야할지 막막하다면?</h2>
+        <p>지금 시작해보세요!</p>
+        <a href="../html/Login.html" class="btn">여행 시작하기</a>
+    </section>
 
-        <div style="margin: 0 50px; width: 100px;">
-            <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                <a href="#" onclick="goToMyPage()">
-                    <img src="../img/마이페이지.png" class="icon" width="50"
-                        style="vertical-align: middle; margin-bottom: 10px;">
-                </a>
-                <p style="margin-top: 0; font-weight: bold;">마이페이지</p>
+    <div class="main-content">
+        <div class="top-travel-section">   
+            <div class="toptrave1">
+                <p class="text-with-underline" >TOP 인기 여행지</p>
             </div>
-        </div>
-    </div>
-    <hr>
-    
-    
-    <div class="results">
-        <div class="toptrave1">
-            <p class="text-with-underline" >TOP 인기 여행지</p>
-        </div>
 
         <div class="results1" id="top-results">
             <div class="result-card">
@@ -191,23 +158,27 @@
             </div>
         </div>
     </div>
+</div>
 
-    <div class="results">
-        <div class="toptrave2">
-            <p class="text-with-underline">문화체육관광부 추천 여행지</p>
-        </div>
 
-        <div class="results2" id="travel-info"></div>
+<hr>
+<div class="top-travel-section">   
+    <div class="toptrave2">
+        <p class="text-with-underline">문화체육관광부 추천 여행지</p>
     </div>
 
-    <script src="../JS/MAIN.js"></script>
-</body>
+    <div class="results2" id="travel-info"></div>
+</div>
 
-<footer style="background-color:#007bff; color: white; padding: 20px; text-align: center; width: 100%; margin: 0;">
+
+<script src="../js/Main.js"></script>
+</body>
+</div> 
+
+<!-- 푸터 -->
+<footer>
     <p>당장 떠나고 싶으면 고민하지 말고 Let' Go</p>
     <p>© 2024. 혼자왔니?</p>
 </footer>
-
-
 
 </html>
