@@ -1,0 +1,84 @@
+header {
+    text-align: center;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.wishlist {
+    position: absolute;
+    user-select: none;
+    top: 160px;
+    /* 위치를 조정하세요 */
+    left: 15px;
+    /* 위치를 조정하세요 */
+    font-size: 30px;
+    /* 글자 크기를 조정하세요 */
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'HSSanTokki20-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/HSSanTokki20-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 30px;
+    font-family: 'HSSanTokki20-Regular';
+    user-select: none;
+    color: black;
+    position: absolute;
+    left: 60px;
+    transform: translateX(-50%);
+}
+
+.button {
+    background-color: #007bff;
+    user-select: none;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 12px;
+    position: absolute;
+    right: 30px;
+    /* 버튼을 오른쪽에서 약간 왼쪽으로 이동 */
+    top: -19px;
+}
+
+ul {
+    justify-content: space-around;
+    list-style-type: none;
+    background-color: #007bff;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-top: 50px;
+    display: flex;
+}
+
+li {
+    font-size: 15px;
+}
+
+.nav-button {
+    border: none;
+    user-select: none;
+    color: white;
+    padding: 16px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+    cursor: pointer;
+}
