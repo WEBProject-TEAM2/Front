@@ -1,5 +1,12 @@
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'S-CoreDream-3Light';
     margin: 0;
     padding: 0;
     display: flex;
@@ -7,54 +14,94 @@ body {
     align-items: center;
 }
 
-.header {
-    display: flex;
-    user-select: none;
-    justify-content: space-between;
-    width: 100%;
+/* 헤더 스타일링 */
+header {
+    background-color: #123657;
+    color: #fff;
     padding: 20px;
-    background-color: white;
-}
-
-@font-face {
-    font-family: 'HSSanTokki20-Regular';
-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2405@1.0/HSSanTokki20-Regular.woff2') format('woff2');
-    font-weight: normal;
-    font-style: normal;
-}
-
-.header h3 {
-    font-family: 'HSSanTokki20-Regular';
-    margin-right: auto;
-    margin-left: 40px;
-    font-size: 30px;
-}
-
-.button {
-    background-color: rgb(137, 248, 248);
-    border: none;
-    color: white;
-    padding: 8px 20px;
     text-align: center;
+}
+
+h2{
+    margin-top: 20px;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 헤더 우측 정렬 */
+    margin-top: 10px; /* 헤더의 제일 위쪽으로 이동 */
+    margin-right: 20px; /* 로그인 버튼과 드롭다운 메뉴 사이의 간격 조절 */
+}
+
+.btn-navi.login {
+    background-color: #d0d1d0; /* Green */
+    border-radius: 15px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin-right: 10px; /* 로그인 버튼과 드롭다운 사이의 간격 조절 */
+    cursor: pointer;
+    font-family: 'S-CoreDream-3Light';
+}
+
+.btn-navi.login:hover {
+    background-color: #a9ff08;
+}
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+}
+
+.dropdown-btn {
+    background-color: #d0d1d0; /* Green */
+    border-radius: 15px;
+    padding: 10px 20px;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 20px 2px;
+    margin-right: 10px; /* 드롭다운 버튼과 로그인 버튼 사이의 간격 조절 */
     cursor: pointer;
-    border-radius: 12px;
-    position: absolute;
-    right: 25px;
-    top: 0;
+    position: relative;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-family: 'S-CoreDream-3Light';
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.show {
+    display: block;
 }
 
 .menu {
     display: flex;
     justify-content: space-around;
     background-color: whitesmoke;
+    align-items: center; /* 추가된 속성 */
     font-size: 18px;
     padding: 5px;
     list-style: none;
-    margin: 0;
+    margin-top: 5px;
     width: 100%;
 }
 
@@ -70,7 +117,7 @@ body {
     user-select: none;
     position: absolute;
     background-color: #f9f9f9;
-    min-width: 100%;
+    min-width: 900px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 10;
     padding: 10px;
@@ -95,7 +142,6 @@ body {
 
 .main-content {
     display: flex;
-    width: 100%;
     padding: 20px;
     gap: 20px;
     position: relative;
@@ -122,7 +168,7 @@ body {
     left: 10px;
     z-index: 1;
     padding: 10px;
-    margin-top: 115px;
+    margin-top: 220px;
     border-radius: 5px;
 }
 
@@ -309,4 +355,15 @@ body {
     user-select: none;
     top: -10px;
     right: 190px;
+}
+
+/* 푸터 스타일링 */
+footer {
+    position: relative;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: 20px;
 }
