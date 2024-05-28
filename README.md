@@ -14,6 +14,7 @@
   - Restaurant_Weather.css [음식점 정보 페이지 + 날씨]
   - Hotel.css [숙소 페이지 + 날씨]
   - tourist_att.css [관광지 + 날씨]
+  - like.css [찜 페이지]
   - js 파일에서 details.appendchild(콜) -> (phone)으로 변경해서 실행하면 됩니다.
 
 ⊙ Front>html
