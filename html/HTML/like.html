@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행 계획 리스트</title>
+    <link rel="stylesheet" href="../CSS/like.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <header>
+            <h1>혼자왔니</h1>
+            <button class="button" onclick="redirectToPage()">마이페이지</button>
+            <div class="wishlist">찜 목록</div>
+            <div class="new-element"
+                style="position: absolute; top: 130px; left: 500px; width: 840px; height: 120px; border: 1px solid black; border-radius: 10px; display: flex; justify-content: flex-start; align-items: center;">
+                <img src="../image/dal.jpg" alt="Dal"
+                    style="width: 110px; height: 110px; border-radius: 10px; object-fit: contain; margin-left: 5px;">
+                <div style="display: inline-block; vertical-align: top; text-align: left; margin-left: 10px;">
+                    <div style="font-size: 20px; font-weight: bold;">달랭이</div>
+                    <div style="font-size: 18px;">서울 종로구 관수동 104-2</div>
+                    <br>
+                    <div style="font-size: 18px; color: #f4d442; display: inline-block; margin-top: 10px;">★ 4.6</div>
+                    <button style="font-size: 14px; margin-left: 400px; border-radius: 10px;">상세정보</button>
+                    <button style="font-size: 14px; border-radius: 10px;">리스트 담기
+                        <img src="../image/cart.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                    <button style="font-size: 14px; border-radius: 10px;">취소
+                        <img src="../image/love.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                </div>
+            </div>
+
+            <div class="new-element"
+                style="position: absolute; top: 260px; left: 500px; width: 840px; height: 120px; border: 1px solid black; border-radius: 10px; display: flex; justify-content: flex-start; align-items: center;">
+                <img src="../image/memil.jpg" alt="Dal"
+                    style="width: 110px; height: 110px; border-radius: 10px; object-fit: contain; margin-left: 5px;">
+                <div style="display: inline-block; vertical-align: top; text-align: left; margin-left: 10px;">
+                    <div style="font-size: 20px; font-weight: bold;">광화문미진</div>
+                    <div style="font-size: 18px;">서울 종로구 종로 19</div>
+                    <br>
+                    <div style="font-size: 18px; color: #f4d442; display: inline-block; margin-top: 10px;">★ 4.38</div>
+                    <button style="font-size: 14px; margin-left: 390px; border-radius: 10px;">상세정보</button>
+                    <button style="font-size: 14px; border-radius: 10px;">리스트 담기
+                        <img src="../image/cart.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                    <button style="font-size: 14px; border-radius: 10px;">취소
+                        <img src="../image/love.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                </div>
+            </div>
+
+            <div class="new-element"
+                style="position: absolute; top: 390px; left: 500px; width: 840px; height: 120px; border: 1px solid black; border-radius: 10px; display: flex; justify-content: flex-start; align-items: center;">
+                <img src="../image/jongro.jpg" alt="Dal"
+                    style="width: 110px; height: 110px; border-radius: 10px; object-fit: contain; margin-left: 5px;">
+                <div style="display: inline-block; vertical-align: top; text-align: left; margin-left: 10px;">
+                    <div style="font-size: 20px; font-weight: bold;">종로도담</div>
+                    <div style="font-size: 18px;">서울 종로구 삼봉로 78</div>
+                    <br>
+                    <div style="font-size: 18px; color: #f4d442; display: inline-block; margin-top: 10px;">★ 4.45</div>
+                    <button style="font-size: 14px; margin-left: 390px; border-radius: 10px;">상세정보</button>
+                    <button style="font-size: 14px; border-radius: 10px;">리스트 담기
+                        <img src="../image/cart.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                    <button style="font-size: 14px; border-radius: 10px;">취소
+                        <img src="../image/love.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                </div>
+            </div>
+
+            <div class="new-element"
+                style="position: absolute; top: 520px; left: 500px; width: 840px; height: 120px; border: 1px solid black; border-radius: 10px; display: flex; justify-content: flex-start; align-items: center;">
+                <img src="../image/Ikseon.jpg" alt="Dal"
+                    style="width: 110px; height: 110px; border-radius: 10px; object-fit: contain; margin-left: 5px;">
+                <div style="display: inline-block; vertical-align: top; text-align: left; margin-left: 10px;">
+                    <div style="font-size: 20px; font-weight: bold;">익선취향</div>
+                    <div style="font-size: 18px;">서울 종로구 수표로28길 17-32 1층</div>
+                    <br>
+                    <div style="font-size: 18px; color: #f4d442; display: inline-block; margin-top: 10px;">★ 4.1</div>
+                    <button style="font-size: 14px; margin-left: 400px; border-radius: 10px;">상세정보</button>
+                    <button style="font-size: 14px; border-radius: 10px;">리스트 담기
+                        <img src="../image/cart.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                    <button style="font-size: 14px; border-radius: 10px;">취소
+                        <img src="../image/love.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                </div>
+            </div>
+
+            <div class="new-element"
+                style="position: absolute; top: 650px; left: 500px; width: 840px; height: 120px; border: 1px solid black; border-radius: 10px; display: flex; justify-content: flex-start; align-items: center;">
+                <img src="../image/cham.jpg" alt="Dal"
+                    style="width: 110px; height: 110px; border-radius: 10px; object-fit: contain; margin-left: 5px;">
+                <div style="display: inline-block; vertical-align: top; text-align: left; margin-left: 10px;">
+                    <div style="font-size: 20px; font-weight: bold;">참치공방 종각본점</div>
+                    <div style="font-size: 18px;">서울 종로구 종로9길 8 1층</div>
+                    <br>
+                    <div style="font-size: 18px; color: #f4d442; display: inline-block; margin-top: 10px;">★ 4.26</div>
+                    <button style="font-size: 14px; margin-left: 390px; border-radius: 10px;">상세정보</button>
+                    <button style="font-size: 14px; border-radius: 10px;">리스트 담기
+                        <img src="../image/cart.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                    <button style="font-size: 14px; border-radius: 10px;">취소
+                        <img src="../image/love.png" alt="Info Icon" style="width: 14px; height: 14px;">
+                    </button>
+                </div>
+            </div>
+
+        </header>
+    </div>
+    <ul>
+        <li><a class="nav-button" href="#home">홈</a></li>
+        <li><a class="nav-button" href="#hotel">숙소</a></li>
+        <li><a class="nav-button" href="#restaurant">음식점</a></li>
+        <li><a class="nav-button" href="#tourist_spot">관광지</a></li>
+    </ul>
+</body>
+
+<footer style="background-color: #007bff; color:white; padding: 0; text-align: center; width: 100%; position: fixed; margin: 0; bottom: 0; user-select: none;">
+    <p>당장 떠나고 싶으면 고민하지 말고 Let' Go</p>
+    <p>© 2024. 혼자왔니?</p>
+</footer>
+
+</html>
