@@ -357,25 +357,22 @@ function renderRestaurantInfo(restaurants) {
         });
         actions.appendChild(detailBtn);
             
-        const listBtn = document.createElement("button");
-        listBtn.textContent = "리스트 담기";
-        actions.appendChild(listBtn);
-
-        const listImg = document.createElement("img");
-        listImg.src = "../image/cart.png";
-        listImg.alt = "리스트 담기";
-        listImg.classList.add("action-image");
-        listBtn.insertBefore(listImg, listBtn.firstChild);
-
+        
         const likeBtn = document.createElement("button");
         likeBtn.innerHTML = "찜";
         actions.appendChild(likeBtn);
-
+        
         const likeImg = document.createElement("img");
-        likeImg.src = "../image/heart.png";
+        likeImg.src = "../img/love.png";
         likeImg.alt = "찜";
         likeImg.classList.add("action-image");
-        likeBtn.insertBefore(likeImg, likeBtn.firstChild)
+        
+        // 이미지 로드 실패 시 대체 이미지 설정
+        likeImg.onerror = function() {
+            this.src = "../img/사진없음.png"; // 대체 이미지 경로
+        };
+        
+        likeBtn.insertBefore(likeImg, likeBtn.firstChild);
 
         restaurantInfo.appendChild(actions);
 
@@ -383,12 +380,21 @@ function renderRestaurantInfo(restaurants) {
     });
 }
 
-function redirectToPage2() {
-    window.location.href = '../HTML/Restaurant_Weather.html';
-}
 
+function redirectToPage1() {
+    window.location.href = '../html/Main.html';
+}
+function redirectToPage2() {
+    window.location.href = '../html/Hotel.html';
+}
 function redirectToPage3() {
-    window.location.href = '../HTML/Tour_att.html';
+    window.location.href = '../html/Restaurant_Weather.html';
+}
+function redirectToPage4() {
+    window.location.href = '../html/Tour_att.html';
+}
+function redirectToPage5() {
+    window.location.href = '../html/MyPage.html';
 }
 
 // 페이지 로드 시 지도 초기화
