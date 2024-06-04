@@ -1,7 +1,7 @@
 var map; // 지도 객체
 var circle; // 반경을 표시할 원 객체
 var markerList = []; // 지도에 표시된 마커 목록
-var restaurantList = []; // 검색된 음식점 목록
+var lodgingList = []; // 검색된 음식점 목록
 var infoWindow; // 정보창 객체
 var geocoder; // 지오코딩 객체
 var panorama; // 거리뷰 객체
@@ -188,7 +188,7 @@ async function fetchAllRestaurantMarkers(lat, lng, radius) {
     var request = {
         location: new google.maps.LatLng(lat, lng),
         radius: radius,
-        type: ["tourist_attraction"], // 음식점만 검색
+        type: ["lodging"], // 음식점만 검색
     };
 
     // 페이지별로 결과를 처리하는 함수
@@ -351,37 +351,50 @@ function renderRestaurantInfo(restaurants) {
         const detailBtn = document.createElement("button");
         detailBtn.textContent = "상세정보";
         detailBtn.addEventListener("click", function() {
-            const name = encodeURIComponent(placeDetails.name); // 음식점 이름을 URL 형식에 맞게 인코딩합니다.
+            const name = encodeURIComponent(placeDetails.name);
             const mapUrl = `https://www.google.com/maps/search/?api=1&query=${name}`;
             window.open(mapUrl, "_blank");
         });
-        
         actions.appendChild(detailBtn);
             
-        const listBtn = document.createElement("button");
-        listBtn.textContent = "리스트 담기";
-        actions.appendChild(listBtn);
-
-        const listImg = document.createElement("img");
-        listImg.src = "../image/cart.png";
-        listImg.alt = "리스트 담기";
-        listImg.classList.add("action-image");
-        listBtn.insertBefore(listImg, listBtn.firstChild);
-
+        
         const likeBtn = document.createElement("button");
         likeBtn.innerHTML = "찜";
         actions.appendChild(likeBtn);
-
+        
         const likeImg = document.createElement("img");
-        likeImg.src = "../image/heart.png";
+        likeImg.src = "../img/love.png";
         likeImg.alt = "찜";
         likeImg.classList.add("action-image");
-        likeBtn.insertBefore(likeImg, likeBtn.firstChild)
+        
+        // 이미지 로드 실패 시 대체 이미지 설정
+        likeImg.onerror = function() {
+            this.src = "../img/사진없음.png"; // 대체 이미지 경로
+        };
+        
+        likeBtn.insertBefore(likeImg, likeBtn.firstChild);
 
         restaurantInfo.appendChild(actions);
 
         infoBox.appendChild(restaurantInfo);
     });
+}
+
+
+function redirectToPage1() {
+    window.location.href = '../html/Main.html';
+}
+function redirectToPage2() {
+    window.location.href = '../html/Hotel.html';
+}
+function redirectToPage3() {
+    window.location.href = '../html/Restaurant_Weather.html';
+}
+function redirectToPage4() {
+    window.location.href = '../html/Tour_att.html';
+}
+function redirectToPage5() {
+    window.location.href = '../html/MyPage.html';
 }
 
 // 페이지 로드 시 지도 초기화
