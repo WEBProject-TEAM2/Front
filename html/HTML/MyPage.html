@@ -4,51 +4,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마이페이지</title>
+    <script src="https://kit.fontawesome.com/b2560cc337.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/MyPage.css">
 </head>
 <body>
-    <header>
-        <h1>혼자왔니</h1>
-    </header>
-    <nav>
-        <a href="../HTML/MAIN.html">Home</a> <!--메인페이지로 이동-->>
-        <a href="../HTML/AreaDropdown.html">지역</a> <!--지역페이지로 이동-->>
-        <a href="#">숙소</a> <!--숙소페이지로 이동-->>
-        <a href="../HTML/restaurant.html">음식점</a> <!--음식점페이지로 이동-->>
-        <a href="#">관광지</a> <!--관광지페이지로 이동-->>
-    </nav>
 
-    <div class="mypage">
-        <span>마이페이지</span>
-    </div>
-    
-    <div class="container">
-        <div class="gallery">
-            <div class="item">
-                <div class="img-container">
-                    <img src="../img/my.png" alt="Image 1">
+    <header>
+        <div class="right">
+            <a href="../html/Login.html"><button type="button" class="btn-navi login">로그인 / 회원가입</button></a>
+            <div class="dropdown">
+                <button class="dropdown-btn" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="../html/Hotel.html" onclick="closeDropdown()">숙소</a>
+                    <a href="../html/Restaurant_Weather.html" onclick="closeDropdown()">음식점</a>
+                    <a href="../html/Tour_att.html" onclick="closeDropdown()">관광지</a>
+                    <a href="../html/MyPage.html" onclick="closeDropdown()">마이페이지</a>
                 </div>
-                <a href="../HTML/quit.html"><input type="text" value="나의 정보" readonly></a> <!--나의정보로 이동-->
             </div>
-            <div class="item">
-                <div class="img-container">
-                    <img src="../img/history.png" alt="Image 2">
-                </div>
-                <a href="../HTML/recently.html"><input type="text" value="최근 본 여행지" readonly></a> <!--최근 본 여행지로 이동-->
-            </div>
-            <div class="item">
-                <div class="img-container">
-                    <img src="../img/heart.png" alt="Image 3">
-                </div>
-                <a href="../HTML/like.html"><input type="text" value="찜" readonly></a> <!--찜으로 이동-->
-            </div>
-            <div class="item">
-                <div class="img-container">
-                    <img src="../img/plan.png" alt="Image 4">
-                </div>
-                <a href="../HTML/list.html"><input type="text" value="여행스케줄" readonly></a> <!--여행스케줄로 이동-->
+        </div>
+        <h1>혼자왔니</h1>
+        <nav>
+            <ul>
+                <li><a href="../html/Main.html">홈</a></li>
+                <li><a href="../html/Hotel.html">숙소</a></li>
+                <li><a href="../html/Restaurant_Weather.html">음식점</a></li>
+                <li><a href="../html/Tour_att.html">관광지</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+    <div class="profile">
+        <img src="../img/my.png" alt="Your Image">
+        <div class="text-boxes">
+            <input type="text" placeholder="아이디">
+            <input type="text" placeholder="이메일">
+            <input type="date" placeholder="생년월일">
+            <div class="right">
+                <button type="button" class="update" onclick="confirmUpdate()">회원 정보 수정</button>
+                <button type="button" class="quit" onclick="confirmDelete()">회원탈퇴</button>
             </div>
         </div>
     </div>
+    <aside class="menu">
+        <h1>마이페이지</h1>
+        <ul>
+            <li><a href="../html/MyPage.html" class="highlight">나의 정보</a></li>
+            <li><a href="../html/Like.html">찜 목록 보기</a></li>
+        </ul>
+    </aside>
+
+    <script src="../js/MyPage.js"></script>
 </body>
+
+<!-- 푸터 -->
+<footer>
+    <p>당장 떠나고 싶으면 고민하지 말고 Let' Go</p>
+    <p>© 2024. 혼자왔니?</p>
+</footer>
+
 </html>
