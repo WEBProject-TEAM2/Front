@@ -1,182 +1,341 @@
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>혼자왔니?</title>
-    <script src="https://kit.fontawesome.com/b2560cc337.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../css/Main.css">
-</head>
-<body>
-    <header>
-        <div class="right">
-            <a href="../html/Login.html"><button type="button" class="btn-navi login">로그인 / 회원가입</button></a>
-            <div class="dropdown">
-                <button class="dropdown-btn" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="../html/Hotel.html" onclick="closeDropdown()">숙소</a>
-                    <a href="../html/Restaurant_Weather.html" onclick="closeDropdown()">음식점</a>
-                    <a href="../html/Tour_att.html" onclick="closeDropdown()">관광지</a>
-                    <a href="../html/MyPage.html" onclick="closeDropdown()">마이페이지</a>
-                </div>
-            </div>
-        </div>
-        <h1>혼자왔니</h1>
-        <nav>
-            <ul>
-                <li><a href="../html/Hotel.html">숙소</a></li>
-                <li><a href="../html/Restaurant_Weather.html">음식점</a></li>
-                <li><a href="../html/Tour_att.html">관광지</a></li>
-                <li><a href="../html/MyPage.html">마이페이지</a></li>
-            </ul>
-        </nav>
-    </header>
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'S-CoreDream-3Light';
+}
 
-    <!-- 영역 나누기  -->
-    <section class="hero">
-        <h2>여행 계획, 어디서부터 짜야할지 막막하다면?</h2>
-        <p>지금 시작해보세요!</p>
-        <a href="../html/Login.html" class="btn">여행 시작하기</a>
-    </section>
+/* 헤더 스타일링 */
+header {
+    background-color: #123657;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+h1{
+text-align: center;
+margin-top: 15px;
+}
+h2{
+text-align: center;
+margin-top: 18px;
+font-size: 15px;
+}
+.right {
+display: flex;
+align-items: center;
+justify-content: flex-end; /* 헤더 우측 정렬 */
+margin-top: 10px; /* 헤더의 제일 위쪽으로 이동 */
+margin-right: 20px; /* 로그인 버튼과 드롭다운 메뉴 사이의 간격 조절 */
+}
 
-    <div class="main-content">
-        <div class="top-travel-section">   
-            <div class="toptrave1">
-                <p class="text-with-underline" >TOP 인기 여행지</p>
-            </div>
+.weatherInfo {
+    font-size: 16px;
+    user-select: none;
+    margin-right: 180px;
+    color: #fff;
+    position: absolute; /* 절대 위치로 변경 */
+    margin-top: 3px;
+}
 
-        <div class="results1" id="top-results">
-            <div class="result-card">
-                <img src="../img/남산타워.jpg">
-                <h2>남산타워</h2>
-                <button onclick="openURL('https://www.seoultower.co.kr')">자세히 보기</button>
-            </div>
+.btn-navi.login {
+background-color: #d0d1d0; /* Green */
+border-radius: 15px;
+padding: 10px 20px;
+text-align: center;
+font-size: 15px;
+cursor: pointer;
+}
 
-            <div class="result-card">
-                <img src="../img/센트럴파크.jpg">
-                <h2>센트럴파크</h2>
-                <button onclick="openURL('https://www.insiseol.or.kr/park/songdo/facility/central.jsp')">자세히 보기</button>
-            </div>
+.btn-navi.login:hover {
+background-color: #747474;
+}
 
-            <div class="result-card">
-                <img src="../img/속초.jpg">
-                <h2>속초 해수욕장</h2>
-                <button onclick="openURL('http://www.sokchobeach.co.kr/')">자세히 보기</button>
-            </div>
+.show {
+display: block;
+}
 
-            <div class="result-card">
-                <img src="../img/남이섬.jpg">
-                <h2>남이섬</h2>
-                <button onclick="openURL('https://www.namisum.com/')">자세히 보기</button>
-            </div>
+.menu {
+    display: flex;
+    justify-content: space-around;
+    background-color: #ffffff;
+    color: rgb(80, 80, 80);
+    font-size: 18px;
+    padding: 5px;
+    align-items: center; /* 추가된 부분 */
+    list-style: none;
+    border: 1px solid #ccc; /* 모든 면에 테두리 추가 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
 
-            <div class="result-card">
-                <img src="../img/한빛탑.jpg">
-                <h2>대전 엑스포</h2>
-                <button onclick="openURL('https://expoplaza.or.kr/')">자세히 보기</button>
-            </div>
+.menu-item {
+    padding: 10px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
 
-            <div class="result-card">
-                <img src="../img/수성못.jpg">
-                <h2>수성못</h2>
-                <button
-                    onclick="openURL('https://tour.daegu.go.kr/index.do?menu_id=00002943&menu_link=/front/tour/tourMapsView.do?tourId=KOATTR_120')">자세히
-                    보기</button>
-            </div>
+.dropdown-content {
+    display: none;
+    user-select: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    color: black;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    padding: 10px;
+    top: 100%;
+    left: 0;
+    box-sizing: border-box;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px
+}
 
-            <div class="result-card">
-                <img src="../img/해운대.jpg">
-                <h2>해운대</h2>
-                <button onclick="openURL('https://www.haeundae.go.kr/tour/index.do')">자세히 보기</button>
-            </div>
+.dropdown-content .menu-item {
+    padding: 20px;
+    text-align: center;
+    background : none;
+    border: none;
+    white-space: nowrap;
+    font-size: 1px;
+}
 
-            <div class="result-card">
-                <img src="../img/대왕암공원.jpg">
-                <h2>대왕암 공원</h2>
-                <button
-                    onclick="openURL('https://korean.visitkorea.or.kr/detail/ms_detail.do?cotid=9e0f6d0d-ae33-4032-ac05-620137804c00&big_category=&mid_category=&big_area=')">자세히
-                    보기</button>
-            </div>
+.show {
+    display: grid;
+}
 
-            <div class="result-card">
-                <img src="../img/활옥동굴.jpg">
-                <h2>활옥동굴</h2>
-                <button
-                    onclick="openURL('https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=3932cff7-3d3e-4db0-a813-52ca9154baea&con_type=11000')">자세히
-                    보기</button>
-            </div>
+.main-content {
+    display: flex;
+    width: 98%;
+    padding: 10px;
+    gap: 30px;
+    position: relative;
+}
 
-            <div class="result-card">
-                <img src="../img/탑정호.jpg">
-                <h2>탑정호</h2>
-                <button onclick="openURL('https://nonsan.go.kr/tour/html/sub02/020203.html')">자세히 보기</button>
-            </div>
+.map-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 960px;
+    height: 540px;
+    margin-top: 50px;
+    position: relative;
+}
 
-            <div class="result-card">
-                <img src="../img/광한루.jpg">
-                <h2>광한루</h2>
-                <button
-                    onclick="openURL('https://korean.visitkorea.or.kr/detail/rem_detail.do?cotid=5789b725-8ced-433f-a066-a7cde60b20e0')">자세히
-                    보기</button>
-            </div>
+#map {
+    width: 100%;
+    height: 100%;
+}
 
-            <div class="result-card">
-                <img src="../img/전주 한옥마을.jpg">
-                <h2>한옥마을</h2>
-                <button onclick="openURL('https://hanok.jeonju.go.kr/')">자세히 보기</button>
-            </div>
+.radius-dropdown {
+    position: absolute;
+    top: 250px;
+    left: 10px;
+    z-index: 1;
+    padding: 10px;
+    border-radius: 5px;
+}
 
-            <div class="result-card">
-                <img src="../img/국립 경주 박물관.jpg">
-                <h2>국립 경주 박물관</h2>
-                <button onclick="openURL('https://gyeongju.museum.go.kr/')">자세히 보기</button>
-            </div>
+.radius-dropdown select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="black" d="M0 0L2 2L4 0z"/></svg>') no-repeat right 10px center;
+    background-color: #fff;
+    background-size: 10px;
+    width: 150px;
+}
 
-            <div class="result-card">
-                <img src="../img/지리산.jpg">
-                <h2>지리산</h2>
-                <button
-                    onclick="openURL('https://www.knps.or.kr/front/portal/visit/visitCourseMain.do;jsessionid=HzA9qlJ6ZOx1UeTwhdup4Df85a3KsODWs9F2Y79dlfUz7phBzitSEdeAPtrngf5U.chirisan_servlet_engine19?parkId=120100&menuNo=7020100')">자세히
-                    보기</button>
-            </div>
+.radius-dropdown select::-ms-expand {
+    display: none;
+}
 
-            <div class="result-card">
-                <img src="../img/함덕 해수욕장.jpg">
-                <h2>함덕 해수욕장</h2>
-                <button
-                    onclick="openURL('https://www.visitjeju.net/kr/detail/view?contentsid=CONT_000000000500693')">자세히
-                    보기</button>
-            </div>
+.moveToUserLocation {
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
 
-            <div class="result-card">
-                <img src="../img/국립세종수목원.jpg">
-                <h2>국립 세종 수목원</h2>
-                <button onclick="openURL('https://www.sjna.or.kr/intro')">자세히 보기</button>
-            </div>
-        </div>
-    </div>
-</div>
+#search-input {
+    margin-left: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+}
+
+#selected-location {
+    margin-left: 10px;
+    /* 검색 입력창 오른쪽으로 20px 여백 */
+    font-size: 14px;
+    color: black;
+    user-select: none;
+}
+
+.dropdown-label {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-label::after {
+    content: '▼';
+    margin-left: 5px;
+    font-size: 10px;
+}
+
+.restaurant-container {
+    position: relative;
+    margin-top: 50px;
+}
+
+.restaurant-info-box {
+    padding: 10px;
+    width: 950px;
+    height: 560px;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.sort-dropdown {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    margin-right: 10px;
+    z-index: 1;
+}
+
+.restaurant-info {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #bdbbbb;
+    border-radius: 8px;
+    background-color: ghostwhite;
+}
+
+.restaurant-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.restaurant-details {
+    flex: 1;
+}
+
+.restaurant-details h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.restaurant-details p {
+    margin: 4px 0;
+}
+
+.restaurant-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 80px;
+}
+
+.restaurant-actions button {
+    border: none;
+    color: black;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 10px;
+    padding: 5px 22px;
+    border: 1px solid #ccc; /* 모든 면에 테두리 추가 */
+}
+
+.restaurant-actions img {
+    width: 16px;
+    height: 16px;
+}
+
+.restaurant-actions button:hover {
+    text-decoration: underline;
+}
+
+.star-rating {
+    color: #ffc107;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.star-rating::before {
+    content: '★';
+    margin-right: 5px;
+}
+
+.street-view {
+    width: 100%;
+    height: 400px;
+    margin-top: 20px;
+    display: none;
+    /* 기본적으로 숨김 */
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container * {
+    margin: 10px;
+    color: black;
+}
+
+.container h1 {
+    font-size: 3em;
+}
 
 
-<hr>
-<div class="top-travel-section">   
-    <div class="toptrave2">
-        <p class="text-with-underline">문화체육관광부 추천 여행지</p>
-    </div>
 
-    <div class="results2" id="travel-info"></div>
-</div>
-
-
-<script src="../js/Main.js"></script>
-</body>
-
-
-<!-- 푸터 -->
-<footer>
-    <p>당장 떠나고 싶으면 고민하지 말고 Let' Go</p>
-    <p>© 2024. 혼자왔니?</p>
-</footer>
-
-</html>
+footer {
+    font-size: 13px;
+    position: fixed; /* 화면에 고정 */
+    bottom: 0; /* 화면 하단에 배치 */
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
