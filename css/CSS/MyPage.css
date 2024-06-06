@@ -1,116 +1,254 @@
 /* Reset CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'S-CoreDream-3Light';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f0f0f0;
+    font-family: 'S-CoreDream-3Light';
 }
 
+/* 헤더 스타일링 */
 header {
-    text-align: left;
-    padding: 1rem;
-}
-
-nav {
-    display: flex;
-    justify-content: flex-start; /* 왼쪽 정렬 */
-    background-color: #444;
-    padding: 0.8rem;
-    margin-top: 10px;
-}
-
-
-nav a {
+    background-color: #123657;
     color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 헤더 우측 정렬 */
+    margin-right: 20px; /* 로그인 버튼과 드롭다운 메뉴 사이의 간격 조절 */
+}
+
+.btn-navi.login {
+    background-color: #d0d1d0; /* Green */
+    border-radius: 15px;
+    padding: 10px 20px;
+    text-align: center;
     text-decoration: none;
-    margin: 0 1rem;
-}
-.mypage {
-    font-size: 25px;
-    text-align: center;
-    margin-top: 80px; /* 네비게이션과의 간격 조절 */
-    font-weight: bold; /* 텍스트 굵게 */
-}
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 2rem;
-}
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap; /* 줄바꿈을 하지 않도록 설정 */
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* 사진 사이의 간격 조절 */
-}
-
-.item {
-    text-align: center;
-    background-color: white;
-    border: 1px solid #ccc;
-    border-radius: 8px; /* 컨테이너 네모 -> 동그라미 */
-    padding: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 400px; /* 박스의 너비 설정 */
-    height: 280px; /* 박스의 높이 설정 */
-    margin-top: px; /* 박스의 상단 여백 설정 */
-    box-sizing: border-box; /* padding과 border를 포함하여 크기 계산 */
-}
-
-.img-container {
-    width: 100%;
-    height: 150px; /* 이미지 컨테이너의 높이 설정 */
-    position: relative;
-    overflow: hidden;
-} 
-
-.img-container img {
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%); /* 이미지를 가운데 정렬 */
-    max-width: 80% !important; /* 이미지의 최대 너비 설정 */
-    max-height: 80% !important; /* 이미지의 최대 높이 설정 */
-}
-
-.item h2 {
-    margin-top: 10px;
-    font-size: 18px;
-}
-
-.item input[type="text"] {
-    width: 100%;
-    padding: 5px;
-    margin-top: 30px;
-    border: none;
-    border-radius: 4px;
-    background-color: transparent;
-    text-align: center;
+    font-size: 15px;
+    margin-right: 10px; /* 로그인 버튼과 드롭다운 사이의 간격 조절 */
     cursor: pointer;
-    text-decoration: underline; /* 밑줄 추가 */
-    color: #444; /* 텍스트 색상 */
 }
-/*창 줄이면 창 크기에 맞게 박스 위치 2줄됨, 여기 지우면 갤러리 크기만 줄어드는 반응형!*/
+
+.btn-navi.login:hover {
+    background-color: #747474;
+}
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: 0;
+
+}
+
+.dropdown-btn {
+    background-color: #d0d1d0; /* Green */
+    border-radius: 15px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-right: 10px; /* 드롭다운 버튼과 로그인 버튼 사이의 간격 조절 */
+    cursor: pointer;
+    position: relative;
+}
+.dropdown-btn:hover {
+    background-color: #747474;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+
+}
+
+.dropdown-content a:hover {
+    background-color: #d4d4d4;
+}
+
+.show {
+    display: block;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 20px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.menu {
+    width: 200px;
+    background-color: #ffffff;
+    border-right: 1px solid #6d6b6b;
+    position: fixed;
+    top: 240px; /* header 높이만큼 내려주기 */
+    height: calc(100vh - 240px); /* 전체 화면 높이에서 header 높이를 뺀 값 */
+    padding: 20px 0;
+}
+
+.menu h1 {
+    font-size: 18px;
+    padding: 0 20px;
+    margin-bottom: 3rem;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+
+.menu li {
+    margin-bottom: 1rem;
+}
+
+.menu li a {
+    height: 30px;
+    display: block;
+    padding: 0 20px;
+    font-size: 14px; /* px 단위를 추가 */
+    color: #555;
+}
+
+.menu li a:hover {
+    background-color: #747474;
+    color: white;
+}
+
+.menu a.highlight {
+    font-size: 18px; /* 글씨 크기 증가 */
+    font-weight: bold; /* 글씨 굵게 */
+    color: rgb(80, 80, 80); /* 색상 설정 */
+    text-decoration: underline; /* 밑줄 추가 */
+}
+.profile {
+    margin-left: 220px; /* 사이드바 너비 + 여백만큼 메인 콘텐츠를 옮김 */
+    padding: 20px;
+}
+
+.profile img {
+    top: 200px; /* 위에서 50px 만큼 떨어진 위치 */
+    left: 250px; /* 왼쪽에서 100px 만큼 떨어진 위치 */
+    width: 200px; /* 너비 설정 */
+    height: 200px; /* 높이 자동으로 조정 */
+
+}
+
+.right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; 
+    margin-top: 20px; 
+    margin-right: 20px; 
+}
+
+.update {
+    background-color: #e9ebe9; /* Green */
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 20px; /* 로그인 버튼과 드롭다운 사이의 간격 조절 */
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.update:hover {
+    background-color: #949494;
+}
+
+
+.quit {
+    background-color: #e9ebe9; /* Green */
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 15px;
+    margin-right: 20px; /* 로그인 버튼과 드롭다운 사이의 간격 조절 */
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.quit:hover {
+    background-color: #949494;
+}
+
+.show {
+    display: block;
+}
+
+.text-boxes {
+    margin-top: 30px;
+}
+
+.text-boxes input {
+    display: block;
+    width: 30%;
+    padding: 10px;
+    margin-top: 20px; /* 이미지 아래 여백 조정 */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+footer {
+    font-size: 13px;
+    position: fixed; /* 화면에 고정 */
+    bottom: 0; /* 화면 하단에 배치 */
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+/*창 줄이면 창 크기에 맞게 박스 위치 2줄됨, 여기 지우면 갤러리 크기만 줄어드는 반응형!
 @media (max-width: 1200px) { 
     .item {
-        flex: 1 1 calc(50% - 40px); /* 3개의 컬럼으로 줄이기 */
+        flex: 1 1 calc(50% - 40px); //3개의 컬럼으로 줄이기 
     }
 }
-
 @media (max-width: 900px) {
     .item {
-        flex: 1 1 calc(50% - 40px); /* 2개의 컬럼으로 줄이기 */
+        flex: 1 1 calc(50% - 40px); //2개의 컬럼으로 줄이기 
     }
 }
-
 @media (max-width: 600px) {
     .item {
-        flex: 1 1 calc(100% - 40px); /* 1개의 컬럼으로 줄이기 */
+        flex: 1 1 calc(100% - 40px); //1개의 컬럼으로 줄이기 
     }
-}
+} */
