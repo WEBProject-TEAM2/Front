@@ -1,26 +1,15 @@
 // 마이페이지 아이콘 클릭 시 실행되는 함수
 function goToMyPage() {
-    // 여기서는 단순히 사용자가 로그인되어 있는지 여부만 확인합니다.
-    // 실제 프로젝트에서는 사용자의 로그인 상태를 서버에서 확인해야 합니다.
-
-    // 사용자가 로그인되어 있는지 여부를 확인
-    var isLoggedIn = checkUserLoginStatus(); // 여기에는 실제로 사용자의 로그인 상태를 확인하는 코드가 들어갑니다.
-
-    // 만약 사용자가 로그인되어 있지 않다면 로그인 페이지로 이동
+    var isLoggedIn = checkUserLoginStatus(); 
     if (!isLoggedIn) {
         window.location.href = "../HTML/login.html";
     } else {
-        // 사용자가 로그인되어 있다면 마이페이지로 이동하거나 다른 작업을 수행할 수 있습니다.
         window.location.href = "../HTML/MyPage.html";
     }
 }
 
 // 실제로 사용자의 로그인 상태를 확인하는 함수
 function checkUserLoginStatus() {
-    // 여기에는 실제로 사용자의 로그인 상태를 확인하는 코드가 들어갑니다.
-    // 예를 들어, 쿠키나 세션을 사용하여 사용자의 로그인 상태를 확인할 수 있습니다.
-    // 이 함수는 사용자가 로그인되어 있는지 여부를 true 또는 false로 반환합니다.
-    // 이 예시에서는 간단히 false를 반환하도록 합니다.
     return false;
 }
 
