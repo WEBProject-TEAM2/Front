@@ -36,6 +36,7 @@
     width: 30%;
     height: 10%;
     position: relative;
+    user-select: none;
 }
 
 body {
@@ -50,11 +51,12 @@ body {
     color: #aaa;
     position: absolute;
     top: 0;
-    right: 0;
+    right: 10px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
 }
+
 /* 헤더 스타일링 */
 header {
     background-color: #123657;
