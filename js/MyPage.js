@@ -40,6 +40,7 @@ async function confirmDelete() {
 }
 
 // 회원 정보 수정 확인 함수
+// 아직 작업중인 코드임
 async function confirmUpdate() {
     // 정보 수정 완료 메시지 출력
     var result = confirm("회원 정보를 수정하시겠습니까?");
@@ -47,18 +48,20 @@ async function confirmUpdate() {
         var password = document.getElementById('passwordInput').value;
         try {
             const response=await fetch('/user/update', {
+                // 서버에 POST로 요청을 보냄
                 method: 'POST',
                 headers : {
                     'Content-Type': 'application/json'
+                    // 반환 타입 : json
                 },
                 body: JSON.stringify({ password: password })
             });
             const data = await response.json();
             console.log("data : ", data);
             console.log("response : ", response);
-            if (response.ok) {
+            if (response.ok) { // 서버에서 응답이 돌아오면
                 alert(data.message);
-                window.location.href = '/';
+                window.location.href = '/'; // 성공시 메인페이지로 이동
             }else {
                 alert(data.message || 'Unknown error occurred');
             }
