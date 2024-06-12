@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,15 @@
 <body>
     <header>
         <div class="right">
-            <a href="../html/Login.html"><button type="button" class="btn-navi login">로그인 / 회원가입</button></a>
+            <!-- 로그인되지 않은 경우 -->
+        <div th:if="${id == null}">
+            <a href="/user/login"><button type="button" class="btn-navi login">로그인 / 회원가입</button></a>
+        </div>
+        <!-- 로그인된 경우 -->
+        <div th:if="${id != null}">
+            <span th:text="${name} + '님 환영합니다!'"></span>
+            <a href="/user/logout"><button type="button" class="btn-navi logout">로그아웃</button></a>
+        </div>
             <div class="dropdown">
                 <button class="dropdown-btn" onclick="toggleDropdown()"><i class="fa-solid fa-bars"></i></button>
                 <div id="myDropdown" class="dropdown-content">
